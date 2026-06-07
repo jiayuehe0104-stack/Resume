@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>何佳悦的个人简历 | Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #2b4c7e;
+            --secondary-color: #4a6fa5;
+            --text-dark: #2c3e50;
+            --text-light: #606f7b;
+            --bg-light: #f8fafc;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Tip banner for GitHub */
+        .github-tip {
+            background-color: #e3f2fd;
+            color: #0d47a1;
+            padding: 12px 24px;
+            font-size: 14px;
+            border-bottom: 1px solid #bbdefb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            position: relative;
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .profile-img-container {
+            width: 120px;
+            height: 160px;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Main Content */
+        .content {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 35px;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 20px;
+            color: var(--primary-color);
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Timeline Items (Education & Experience) */
+        .timeline-item {
+            position: relative;
+            padding-left: 0;
+            margin-bottom: 25px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .timeline-title {
+            font-weight: bold;
+            font-size: 16px;
+            color: #1a202c;
+        }
+
+        .timeline-org {
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .timeline-date {
+            color: var(--text-light);
+            font-size: 14px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .timeline-content {
+            font-size: 15px;
+            color: #4a5568;
+            text-align: justify;
+        }
+
+        .timeline-content p {
+            margin-bottom: 6px;
+        }
+
+        .timeline-content ul {
+            list-style-type: none;
+        }
+
+        .timeline-content li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 4px;
+        }
+
+        .timeline-content li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* Skills */
+        .skills-list {
+            list-style: none;
+        }
+        
+        .skills-list li {
+            margin-bottom: 10px;
+            font-size: 15px;
+            color: #4a5568;
+        }
+        
+        .skills-list strong {
+            color: var(--primary-color);
+            display: inline-block;
+            width: 100px;
+        }
+
+        /* Evaluation */
+        .evaluation-list {
+            list-style: none;
+        }
+        
+        .evaluation-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            font-size: 15px;
+            color: #4a5568;
+            text-align: justify;
+        }
+        
+        .evaluation-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2ec4b6;
+            font-weight: bold;
+        }
+
+        /* Responsive */
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column-reverse;
+                align-items: flex-start;
+                padding: 30px 20px;
+            }
+            .profile-img-container {
+                width: 90px;
+                height: 120px;
+            }
+            .content {
+                padding: 30px 20px;
+            }
+            .timeline-header {
+                flex-direction: column;
+            }
+            .timeline-date {
+                margin-top: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="profile-info">
+                <h1>何佳悦</h1>
+                <div class="meta-grid">
+                    <div class="meta-item">
+                        <span>📞 电话：</span>15397181638
+                    </div>
+                    <div class="meta-item">
+                        <span>✉️ 邮箱：</span>jiayuehe0104@gmail.com
+                    </div>
+                    <div class="meta-item">
+                        <span>🎂 出生：</span>2005年1月
+                    </div>
+                </div>
+            </div>
+            <!-- 头像留空，方便用户后续替换 -->
+            <div class="profile-img-container">
+                <div style="padding: 10px;">GitHub简历<br>此处可放头像<br>(avatar.jpg)</div>
+            </div>
+        </header>
+
+        <div class="content">
+            <!-- 教育背景 -->
+            <section>
+                <div class="section-title">教育背景</div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <span class="timeline-org">新南威尔士大学（UNSW）</span>
+                            <span class="timeline-title"> | 传媒专业 - 本科</span>
+                        </div>
+                        <div class="timeline-date">2025.02 至今</div>
+                    </div>
+                    <div class="timeline-content">
+                        <p><strong>主修课程：</strong>屏幕制作、电影研究、市场营销、公共关系学、广告学等。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" style="margin-top: 20px;">
+                    <div class="timeline-header">
+                        <div>
+                            <span class="timeline-org">南京传媒学院</span>
+                            <span class="timeline-title"> | 广播电视编导专业 - 本科</span>
+                        </div>
+                        <div class="timeline-date">2023.09 至 2025.01</div>
+                    </div>
+                    <div class="timeline-content">
+                        <p><strong>主修课程：</strong>广播电视导论、摄影与摄像、画面编辑、新闻采访与写作、艺术概论等。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 实习经历 -->
+            <section>
+                <div class="section-title">实习经历</div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <span class="timeline-org">淘宝天下传媒有限公司</span>
+                            <span class="timeline-title"> | 营销策划实习生</span>
+                        </div>
+                        <div class="timeline-date">2025.12 - 2026.02</div>
+                    </div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>负责前期创意脑暴构思、营销策划方案撰写，根据业务需求优化策划案，完成项目筹备与方案定稿工作；</li>
+                            <li>参与千问、天猫年货节等多个项目全流程落地执行，其中天猫年货节项目获传播侧全网曝光 61.7亿，微博高位主榜文娱 50个；</li>
+                            <li>独立担任“美的”支付宝集五福项目经理，把控红书侧传播节奏，统筹品牌业务与达人商务双向对接，同步沟通需求、审核达人种草内容并跟进修改落地；</li>
+                            <li>负责结项后项目整体数据整理、营销亮点及问题复盘总结，为后续同类项目策划提供数据参考。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item" style="margin-top: 20px;">
+                    <div class="timeline-header">
+                        <div>
+                            <span class="timeline-org">杭州文化广播电视集团</span>
+                            <span class="timeline-title"> | 影视频道实习生</span>
+                        </div>
+                        <div class="timeline-date">2024.02 - 2024.03</div>
+                    </div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>参与《星光之约》节目的前期策划，包括选题调研与拍摄脚本撰写；</li>
+                            <li>撰写每周浙江星光影视公众号原创文稿，及内容编辑与排版；</li>
+                            <li>杭州生活频道民生类节目外出采访，协助拍摄与现场沟通。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 项目经历 -->
+            <section>
+                <div class="section-title">项目经历</div>
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <span class="timeline-org">第五届全国中医药传承创新发展大会</span>
+                            <span class="timeline-title"> | 新媒体运营</span>
+                        </div>
+                        <div class="timeline-date">2024.07 - 2024.12</div>
+                    </div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>协助撰写大会招商合作方案初稿，参与项目前期材料准备与逻辑梳理；</li>
+                            <li>负责大会宣传视频与素材的拍摄与剪辑工作，参与微信视频号、抖音等矩阵平台账号的内容发布与运营，最终达成 30 个抖音账号，7500 条视频，三千万播放总量的宣传效果。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 个人技能 -->
+            <section>
+                <div class="section-title">个人技能</div>
+                <ul class="skills-list">
+                    <li><strong>语言能力：</strong>大学英语四级（CET-4），大学英语六级（CET-6），雅思6.5，普通话二级甲等</li>
+                    <li><strong>软件工具：</strong>全国计算机二级证书，熟练掌握Office软件（Word、PowerPoint、Excel等），熟悉ChatGPT、Gemini、Deepseek、千问、豆包等AI大语言模型</li>
+                    <li><strong>专业技能：</strong>自备相机等拍摄设备，擅长图像、视频拍摄，精通Ps、Pr、An、剪映等软件</li>
+                </ul>
+            </section>
+
+            <!-- 个人评价 -->
+            <section>
+                <div class="section-title">个人评价</div>
+                <ul class="evaluation-list">
+                    <li>本人具备扎实的新媒体内容运营实践经验，熟悉微信公众号、视频号、小红书等主流平台的内容策划、编辑与发布流程，能够独立完成选题、文案撰写及基础拍摄剪辑工作；</li>
+                    <li>实习期间曾多次参与大型活动项目的宣传及账号管理，具备良好的项目执行力与团队协作意识；</li>
+                    <li>对内容传播与用户运营有浓厚兴趣，乐于学习、主动沟通，具备快速适应与落地执行的能力，期待在媒体运营领域持续深耕。</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+</body>
+</html>
